@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		67CE634D265D247E00D764A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE634C265D247E00D764A8 /* AppDelegate.swift */; };
+		67CE634F265D247E00D764A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE634E265D247E00D764A8 /* SceneDelegate.swift */; };
+		67CE6351265D247E00D764A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE6350265D247E00D764A8 /* ViewController.swift */; };
+		67CE6354265D247F00D764A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67CE6352265D247E00D764A8 /* Main.storyboard */; };
+		67CE6357265D247F00D764A8 /* RyanAirTestApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67CE6355265D247F00D764A8 /* RyanAirTestApplication.xcdatamodeld */; };
+		67CE6359265D248200D764A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67CE6358265D248200D764A8 /* Assets.xcassets */; };
+		67CE635C265D248200D764A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67CE635A265D248200D764A8 /* LaunchScreen.storyboard */; };
+		67CE6367265D248200D764A8 /* RyanAirTestApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE6366265D248200D764A8 /* RyanAirTestApplicationTests.swift */; };
+		67CE6372265D248200D764A8 /* RyanAirTestApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE6371265D248200D764A8 /* RyanAirTestApplicationUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67CE6363265D248200D764A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67CE6341265D247E00D764A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67CE6348265D247E00D764A8;
+			remoteInfo = RyanAirTestApplication;
+		};
+		67CE636E265D248200D764A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67CE6341265D247E00D764A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67CE6348265D247E00D764A8;
+			remoteInfo = RyanAirTestApplication;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		67CE6349265D247E00D764A8 /* RyanAirTestApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RyanAirTestApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		67CE634C265D247E00D764A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		67CE634E265D247E00D764A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		67CE6350265D247E00D764A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		67CE6353265D247E00D764A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		67CE6356265D247F00D764A8 /* RyanAirTestApplication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RyanAirTestApplication.xcdatamodel; sourceTree = "<group>"; };
+		67CE6358265D248200D764A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67CE635B265D248200D764A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		67CE635D265D248200D764A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67CE6362265D248200D764A8 /* RyanAirTestApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RyanAirTestApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67CE6366265D248200D764A8 /* RyanAirTestApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RyanAirTestApplicationTests.swift; sourceTree = "<group>"; };
+		67CE6368265D248200D764A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67CE636D265D248200D764A8 /* RyanAirTestApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RyanAirTestApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67CE6371265D248200D764A8 /* RyanAirTestApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RyanAirTestApplicationUITests.swift; sourceTree = "<group>"; };
+		67CE6373265D248200D764A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67CE6346265D247E00D764A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67CE635F265D248200D764A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67CE636A265D248200D764A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		67CE6340265D247E00D764A8 = {
+			isa = PBXGroup;
+			children = (
+				67CE634B265D247E00D764A8 /* RyanAirTestApplication */,
+				67CE6365265D248200D764A8 /* RyanAirTestApplicationTests */,
+				67CE6370265D248200D764A8 /* RyanAirTestApplicationUITests */,
+				67CE634A265D247E00D764A8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		67CE634A265D247E00D764A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67CE6349265D247E00D764A8 /* RyanAirTestApplication.app */,
+				67CE6362265D248200D764A8 /* RyanAirTestApplicationTests.xctest */,
+				67CE636D265D248200D764A8 /* RyanAirTestApplicationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67CE634B265D247E00D764A8 /* RyanAirTestApplication */ = {
+			isa = PBXGroup;
+			children = (
+				67CE634C265D247E00D764A8 /* AppDelegate.swift */,
+				67CE634E265D247E00D764A8 /* SceneDelegate.swift */,
+				67CE6350265D247E00D764A8 /* ViewController.swift */,
+				67CE6352265D247E00D764A8 /* Main.storyboard */,
+				67CE6358265D248200D764A8 /* Assets.xcassets */,
+				67CE635A265D248200D764A8 /* LaunchScreen.storyboard */,
+				67CE635D265D248200D764A8 /* Info.plist */,
+				67CE6355265D247F00D764A8 /* RyanAirTestApplication.xcdatamodeld */,
+			);
+			path = RyanAirTestApplication;
+			sourceTree = "<group>";
+		};
+		67CE6365265D248200D764A8 /* RyanAirTestApplicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				67CE6366265D248200D764A8 /* RyanAirTestApplicationTests.swift */,
+				67CE6368265D248200D764A8 /* Info.plist */,
+			);
+			path = RyanAirTestApplicationTests;
+			sourceTree = "<group>";
+		};
+		67CE6370265D248200D764A8 /* RyanAirTestApplicationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				67CE6371265D248200D764A8 /* RyanAirTestApplicationUITests.swift */,
+				67CE6373265D248200D764A8 /* Info.plist */,
+			);
+			path = RyanAirTestApplicationUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67CE6348265D247E00D764A8 /* RyanAirTestApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67CE6376265D248200D764A8 /* Build configuration list for PBXNativeTarget "RyanAirTestApplication" */;
+			buildPhases = (
+				67CE6345265D247E00D764A8 /* Sources */,
+				67CE6346265D247E00D764A8 /* Frameworks */,
+				67CE6347265D247E00D764A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RyanAirTestApplication;
+			productName = RyanAirTestApplication;
+			productReference = 67CE6349265D247E00D764A8 /* RyanAirTestApplication.app */;
+			productType = "com.apple.product-type.application";
+		};
+		67CE6361265D248200D764A8 /* RyanAirTestApplicationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67CE6379265D248200D764A8 /* Build configuration list for PBXNativeTarget "RyanAirTestApplicationTests" */;
+			buildPhases = (
+				67CE635E265D248200D764A8 /* Sources */,
+				67CE635F265D248200D764A8 /* Frameworks */,
+				67CE6360265D248200D764A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67CE6364265D248200D764A8 /* PBXTargetDependency */,
+			);
+			name = RyanAirTestApplicationTests;
+			productName = RyanAirTestApplicationTests;
+			productReference = 67CE6362265D248200D764A8 /* RyanAirTestApplicationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		67CE636C265D248200D764A8 /* RyanAirTestApplicationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67CE637C265D248200D764A8 /* Build configuration list for PBXNativeTarget "RyanAirTestApplicationUITests" */;
+			buildPhases = (
+				67CE6369265D248200D764A8 /* Sources */,
+				67CE636A265D248200D764A8 /* Frameworks */,
+				67CE636B265D248200D764A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67CE636F265D248200D764A8 /* PBXTargetDependency */,
+			);
+			name = RyanAirTestApplicationUITests;
+			productName = RyanAirTestApplicationUITests;
+			productReference = 67CE636D265D248200D764A8 /* RyanAirTestApplicationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		67CE6341265D247E00D764A8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					67CE6348265D247E00D764A8 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					67CE6361265D248200D764A8 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 67CE6348265D247E00D764A8;
+					};
+					67CE636C265D248200D764A8 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 67CE6348265D247E00D764A8;
+					};
+				};
+			};
+			buildConfigurationList = 67CE6344265D247E00D764A8 /* Build configuration list for PBXProject "RyanAirTestApplication" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 67CE6340265D247E00D764A8;
+			productRefGroup = 67CE634A265D247E00D764A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67CE6348265D247E00D764A8 /* RyanAirTestApplication */,
+				67CE6361265D248200D764A8 /* RyanAirTestApplicationTests */,
+				67CE636C265D248200D764A8 /* RyanAirTestApplicationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		67CE6347265D247E00D764A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67CE635C265D248200D764A8 /* LaunchScreen.storyboard in Resources */,
+				67CE6359265D248200D764A8 /* Assets.xcassets in Resources */,
+				67CE6354265D247F00D764A8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67CE6360265D248200D764A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67CE636B265D248200D764A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67CE6345265D247E00D764A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67CE6351265D247E00D764A8 /* ViewController.swift in Sources */,
+				67CE6357265D247F00D764A8 /* RyanAirTestApplication.xcdatamodeld in Sources */,
+				67CE634D265D247E00D764A8 /* AppDelegate.swift in Sources */,
+				67CE634F265D247E00D764A8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67CE635E265D248200D764A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67CE6367265D248200D764A8 /* RyanAirTestApplicationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67CE6369265D248200D764A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67CE6372265D248200D764A8 /* RyanAirTestApplicationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67CE6364265D248200D764A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67CE6348265D247E00D764A8 /* RyanAirTestApplication */;
+			targetProxy = 67CE6363265D248200D764A8 /* PBXContainerItemProxy */;
+		};
+		67CE636F265D248200D764A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67CE6348265D247E00D764A8 /* RyanAirTestApplication */;
+			targetProxy = 67CE636E265D248200D764A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		67CE6352265D247E00D764A8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67CE6353265D247E00D764A8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		67CE635A265D248200D764A8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67CE635B265D248200D764A8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		67CE6374265D248200D764A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		67CE6375265D248200D764A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		67CE6377265D248200D764A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 882Y7347Y5;
+				INFOPLIST_FILE = RyanAirTestApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sos.RyanAirTestApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67CE6378265D248200D764A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 882Y7347Y5;
+				INFOPLIST_FILE = RyanAirTestApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sos.RyanAirTestApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		67CE637A265D248200D764A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 882Y7347Y5;
+				INFOPLIST_FILE = RyanAirTestApplicationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sos.RyanAirTestApplicationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RyanAirTestApplication.app/RyanAirTestApplication";
+			};
+			name = Debug;
+		};
+		67CE637B265D248200D764A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 882Y7347Y5;
+				INFOPLIST_FILE = RyanAirTestApplicationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sos.RyanAirTestApplicationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RyanAirTestApplication.app/RyanAirTestApplication";
+			};
+			name = Release;
+		};
+		67CE637D265D248200D764A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 882Y7347Y5;
+				INFOPLIST_FILE = RyanAirTestApplicationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sos.RyanAirTestApplicationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RyanAirTestApplication;
+			};
+			name = Debug;
+		};
+		67CE637E265D248200D764A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 882Y7347Y5;
+				INFOPLIST_FILE = RyanAirTestApplicationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sos.RyanAirTestApplicationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RyanAirTestApplication;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67CE6344265D247E00D764A8 /* Build configuration list for PBXProject "RyanAirTestApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67CE6374265D248200D764A8 /* Debug */,
+				67CE6375265D248200D764A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67CE6376265D248200D764A8 /* Build configuration list for PBXNativeTarget "RyanAirTestApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67CE6377265D248200D764A8 /* Debug */,
+				67CE6378265D248200D764A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67CE6379265D248200D764A8 /* Build configuration list for PBXNativeTarget "RyanAirTestApplicationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67CE637A265D248200D764A8 /* Debug */,
+				67CE637B265D248200D764A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67CE637C265D248200D764A8 /* Build configuration list for PBXNativeTarget "RyanAirTestApplicationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67CE637D265D248200D764A8 /* Debug */,
+				67CE637E265D248200D764A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		67CE6355265D247F00D764A8 /* RyanAirTestApplication.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				67CE6356265D247F00D764A8 /* RyanAirTestApplication.xcdatamodel */,
+			);
+			currentVersion = 67CE6356265D247F00D764A8 /* RyanAirTestApplication.xcdatamodel */;
+			path = RyanAirTestApplication.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 67CE6341265D247E00D764A8 /* Project object */;
+}
