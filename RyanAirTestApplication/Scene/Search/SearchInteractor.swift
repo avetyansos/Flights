@@ -27,7 +27,12 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore
             response.stations = stationsList
             self.presenter?.presentStations(response: response)
         }, { error in
-            response.errorString  = error.localizedDescription
+            switch error {
+            case .generalErrorWithString(let errorString):
+                response.errorString = errorString
+            default:
+                response.errorString  = error.localizedDescription
+            }
             self.presenter?.presentError(response: response)
         })
     }
@@ -36,9 +41,11 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore
         var response = Search.UseCase.Response()
         worker = SearchWorker()
         worker?.makeSearchRequest(request, { flight in
-            print(flight)
+            response.flight = flight
+            self.presenter?.presentFlights(response: response)
         }, { error in
-            print(error.localizedDescription)
+            response.errorString = error.localizedDescription
+            self.presenter?.presentError(response: response)
         })
     }
 }

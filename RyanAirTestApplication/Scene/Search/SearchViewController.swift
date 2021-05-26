@@ -8,6 +8,7 @@ import UIKit
 protocol SearchDisplayLogic: AnyObject {
     func saveStations(viewModel : Search.UseCase.ViewModel)
     func showError(viewModel: Search.UseCase.ViewModel)
+    func showSearchResults(viewModel: Search.UseCase.ViewModel)
 }
 
 class SearchViewController: UIViewController, SearchDisplayLogic
@@ -85,7 +86,6 @@ class SearchViewController: UIViewController, SearchDisplayLogic
         let currentDate = Date()
         var comps = DateComponents()
         comps.year = 0
-        let maxDate = calerndar?.date(byAdding: comps, to: currentDate, options: [])
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
             toDatePicker.preferredDatePickerStyle = .wheels
@@ -188,7 +188,15 @@ class SearchViewController: UIViewController, SearchDisplayLogic
     }
     
     func showError(viewModel: Search.UseCase.ViewModel) {
-        print(viewModel.errorString)
+        DispatchQueue.main.async {
+            self.showErrorAlert(title: "Warning", textString: viewModel.errorString)
+        }
+    }
+    
+    func showSearchResults(viewModel: Search.UseCase.ViewModel) {
+        DispatchQueue.main.async {
+            self.router?.navigateToSearchResults(trips: viewModel.flight.trips)
+        }
     }
 }
 

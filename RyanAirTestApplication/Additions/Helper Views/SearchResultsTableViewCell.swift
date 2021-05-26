@@ -8,7 +8,27 @@
 import UIKit
 
 class SearchResultsTableViewCell: UITableViewCell {
+    @IBOutlet weak var datelLabel: UILabel!
+    @IBOutlet weak var flightNumberLabel: UILabel!
+    @IBOutlet weak var verticalStack: UIStackView!
+    
+    var regularFare: [FlightDate]? {
+        didSet {
+            let horizontalStackView: UIStackView = {
+                    let hsv = UIStackView()
+                    hsv.axis = .horizontal
+                    hsv.alignment = .fill
+                    hsv.distribution = .equalSpacing
+                    hsv.spacing = 10
+                    hsv.translatesAutoresizingMaskIntoConstraints = false
 
+                    return hsv
+                }()
+            let amountLabel = UILabel()
+            amountLabel.text = "Sos"
+            horizontalStackView.addSubview(amountLabel)
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

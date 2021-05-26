@@ -24,11 +24,13 @@ enum Search
         {
             var stations: StationsList?
             var errorString = ""
+            var flight: Flight!
         }
         struct ViewModel
         {
             var stations: StationsList?
             var errorString = ""
+            var flight: Flight!
         }
     }
 }

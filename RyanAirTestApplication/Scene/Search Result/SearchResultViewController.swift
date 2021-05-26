@@ -5,7 +5,7 @@
 
 import UIKit
 
-protocol SearchResultDisplayLogic: class {
+protocol SearchResultDisplayLogic: AnyObject {
 
 }
 
@@ -13,7 +13,7 @@ class SearchResultViewController: UIViewController, SearchResultDisplayLogic
 {
     var interactor: SearchResultBusinessLogic?
     var router: (NSObjectProtocol & SearchResultRoutingLogic & SearchResultDataPassing)?
-    
+    var trips = [Trip]()
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -63,5 +63,24 @@ class SearchResultViewController: UIViewController, SearchResultDisplayLogic
         super.viewDidLoad()
         
     }
+    
+}
+
+extension SearchResultViewController: UITableViewDelegate {
+    
+}
+
+extension SearchResultViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return trips.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultsTableViewCell", for: indexPath) as! SearchResultsTableViewCell
+        cell.regularFare = trips[indexPath.row].dates
+        
+        return cell
+    }
+    
     
 }

@@ -98,15 +98,8 @@ enum APIError: Error {
     case passforFailure
     case noInternet
     case badResponse
-    case withDrawError(errorString: String)
-    case addBankAccountError(errorString: String)
-    case deleteAccountError(errorString: String)
-    case deleteBankError(errorString: String)
-    case getProviderError(errorString: String)
-    case depositError(errorString: String)
     case generalErrorWithString(errorString: String)
     case errorWithString(date: Data)
-    case errorWithInfo(info: APIErrorResponse)
     case KYCUnverified
 }
 
@@ -169,10 +162,10 @@ struct APIClient {
                 }
                 guard httpResponse.statusCode == 200 else {
                     if httpResponse.statusCode == 401 {
-                        completion(.failure(FailureResponse<Data?>(statusCode:httpResponse.statusCode, body : .errorWithInfo(info : APIErrorResponse(message: "Invalid Authentication")))))
-                    } else if httpResponse.statusCode == 400 {
-                        if let uData = data, let errorInfo = try? JSONDecoder().decode(APIErrorResponse.self, from: uData) {
-                            completion(.failure(FailureResponse<Data?>(statusCode: httpResponse.statusCode, body: .errorWithInfo(info: errorInfo))))
+                        completion(.failure(FailureResponse<Data?>(statusCode:httpResponse.statusCode, body : .generalErrorWithString(errorString : "Invalid Authentication"))))
+                    } else if httpResponse.statusCode == 404 {
+                        if let uData = data, let errorInfo = try? JSONDecoder().decode(ErrorInfo.self, from: uData) {
+                            completion(.failure(FailureResponse<Data?>(statusCode: httpResponse.statusCode, body: .generalErrorWithString(errorString: errorInfo.message))))
                         } else {
                             completion(.failure(FailureResponse<Data?>(statusCode: httpResponse.statusCode, body: .errorWithString(date: data!))))
                         }
@@ -246,6 +239,10 @@ struct APIClient {
         responseLog += "<------------------------ \n "
         print(responseLog)
     }
+}
+
+struct ErrorInfo: Codable {
+    var message: String
 }
 
 extension URLRequest {

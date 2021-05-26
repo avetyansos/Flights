@@ -7,6 +7,7 @@ import UIKit
 
  protocol SearchRoutingLogic {
     func navigateToOPtionSelections(stations: [Station], isFromOrigin: Bool, selectedStation : Station?)
+    func navigateToSearchResults(trips: [Trip])
 }
 
 protocol SearchDataPassing {
@@ -26,6 +27,13 @@ class SearchRouter: NSObject, SearchRoutingLogic, SearchDataPassing
         destination.airportsList = stations
         destination.isFromOrigin = isFromOrigin
         viewController?.navigationController?.present(destination, animated: true, completion: nil)
+    }
+    
+    func navigateToSearchResults(trips: [Trip]) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destination = storyboard.instantiateViewController(identifier: "SearchResultViewController") as! SearchResultViewController
+        destination.trips = trips
+        viewController?.navigationController?.show(destination, sender: viewController)
     }
     
 }

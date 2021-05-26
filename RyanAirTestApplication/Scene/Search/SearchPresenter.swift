@@ -8,6 +8,7 @@ import UIKit
 protocol SearchPresentationLogic {
     func presentStations(response: Search.UseCase.Response)
     func presentError(response: Search.UseCase.Response)
+    func presentFlights(response: Search.UseCase.Response)
 }
 
 class SearchPresenter: SearchPresentationLogic
@@ -25,5 +26,11 @@ class SearchPresenter: SearchPresentationLogic
         var viewModel = Search.UseCase.ViewModel()
         viewModel.errorString = response.errorString
         viewController?.showError(viewModel: viewModel)
+    }
+    
+    func presentFlights(response: Search.UseCase.Response) {
+        var viewModel = Search.UseCase.ViewModel()
+        viewModel.flight = response.flight
+        viewController?.showSearchResults(viewModel: viewModel)
     }
 }
