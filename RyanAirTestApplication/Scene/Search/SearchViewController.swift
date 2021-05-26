@@ -21,7 +21,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic
     @IBOutlet weak var teenCountLabel: UILabel!
     @IBOutlet weak var childCountLabel: UILabel!
     private var stations: [Station]?
-    private var selectedStation: Station?
+    private var selectedOriginStation: Station!
+    private var selectedDestinationStation: Station!
     @IBOutlet weak var fromDateField: UITextField!
     @IBOutlet weak var toDateField: UITextField!
     private var selectedDate: Date?
@@ -94,8 +95,6 @@ class SearchViewController: UIViewController, SearchDisplayLogic
             toDatePicker.minimumDate = date
             datePicker.maximumDate = date
         } else {
-            toDatePicker.maximumDate = maxDate
-            datePicker.maximumDate = maxDate
             datePicker.minimumDate = currentDate
         }
         toDatePicker.datePickerMode = .date
@@ -155,13 +154,33 @@ class SearchViewController: UIViewController, SearchDisplayLogic
         self.childCountLabel.text = "\(count)"
     }
     @IBAction func searchButtonAction(_ sender: UIButton) {
-        
+        if Int(childCountLabel.text ?? "0")! > 0 {
+            if Int(adultCountLabel.text ?? "0") == 0 {
+                self.showErrorAlert(title: "warning", textString: "Child Cannot be without Adult")
+            }
+        } else if self.adultCountLabel.text == "0", self.teenCountLabel.text == "0"{
+            self.showErrorAlert(title: "warning", textString: "Plese select How many people should fly")
+        } else if self.selectedOriginStation == nil || self.selectedDestinationStation == nil {
+            self.showErrorAlert(title: "warning", textString: "Plese select Airports")
+        } else if self.selectedDate == nil {
+            self.showErrorAlert(title: "warning", textString: "Plese select Departure date")
+        } else {
+            var request = Search.UseCase.Request()
+            request.origin = self.selectedOriginStation.code
+            request.destination = self.selectedDestinationStation.code
+            request.dateOut = self.fromDateField.text!
+            request.dateIn = self.toDateField.text
+            request.adult = self.adultCountLabel.text
+            request.child = self.childCountLabel.text
+            request.teen = self.teenCountLabel.text
+            interactor?.makeSearchRequest(request: request)
+        }
     }
     @IBAction func originButtonAction(_ sender: UIButton) {
-        router?.navigateToOPtionSelections(stations: self.stations ?? [Station](), isFromOrigin: true)
+        router?.navigateToOPtionSelections(stations: self.stations ?? [Station](), isFromOrigin: true, selectedStation: self.selectedOriginStation)
     }
     @IBAction func destinationButtonAction(_ sender: UIButton) {
-        router?.navigateToOPtionSelections(stations: self.stations ?? [Station](), isFromOrigin: false)
+        router?.navigateToOPtionSelections(stations: self.stations ?? [Station](), isFromOrigin: false, selectedStation: self.selectedDestinationStation)
     }
     
     func saveStations(viewModel : Search.UseCase.ViewModel) {
@@ -176,8 +195,10 @@ class SearchViewController: UIViewController, SearchDisplayLogic
 extension SearchViewController : UserSelectionDelegate {
     func userDidSelectedStation(selectedStaion: Station, isOrigin: Bool) {
         if isOrigin {
+            self.selectedOriginStation = selectedStaion
             self.originButton.setTitle("\(selectedStaion.name)(\(selectedStaion.code))", for: .normal)
         } else {
+            self.selectedDestinationStation = selectedStaion
             self.destinationButton.setTitle("\(selectedStaion.name)(\(selectedStaion.code))", for: .normal)
         }
     }

@@ -13,9 +13,14 @@ protocol UserSelectionDelegate {
 
 class OPtionSelectionViewController: UIViewController {
     private var visibleAirportsList = [Station]()
+    @IBOutlet weak var searchTextField: UITextField!
+    var selectedStation: Station?
     var airportsList:[Station]? {
         didSet {
             self.visibleAirportsList = self.airportsList ?? [Station]()
+            if let station = self.selectedStation {
+                self.visibleAirportsList = self.visibleAirportsList.filter({$0.code != station.code})
+            }
         }
     }
     var isFromOrigin = true
@@ -25,7 +30,29 @@ class OPtionSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.reloadData()
+        addTargetOnSearchField()
     }
+    
+    private func addTargetOnSearchField() {
+        self.searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if let text = textField.text {
+            self.visibleAirportsList = self.visibleAirportsList.filter{
+                ($0.countryAlias?.range(of: text, options: .caseInsensitive) != nil)
+                    || ($0.countryCode.range(of: text, options: .caseInsensitive) != nil)
+                    || ($0.countryName.range(of: text, options: .caseInsensitive) != nil)
+                    || ($0.code.range(of: text, options: .caseInsensitive) != nil)
+            }
+            if self.visibleAirportsList.count == 0 || text.count == 0{
+                self.visibleAirportsList = self.airportsList!
+            }
+            self.tableView.reloadData()
+        }
+    }
+    
+    
 }
 
 

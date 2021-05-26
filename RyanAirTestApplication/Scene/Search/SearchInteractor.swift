@@ -7,6 +7,7 @@ import UIKit
 
 protocol SearchBusinessLogic {
     func getAeroportsList()
+    func makeSearchRequest(request: Search.UseCase.Request)
 }
 
 protocol SearchDataStore {
@@ -28,6 +29,16 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore
         }, { error in
             response.errorString  = error.localizedDescription
             self.presenter?.presentError(response: response)
+        })
+    }
+    
+    func makeSearchRequest(request: Search.UseCase.Request) {
+        var response = Search.UseCase.Response()
+        worker = SearchWorker()
+        worker?.makeSearchRequest(request, { flight in
+            print(flight)
+        }, { error in
+            print(error.localizedDescription)
         })
     }
 }
