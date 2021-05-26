@@ -15,9 +15,13 @@ enum Search
         }
         struct Response
         {
+            var stations: StationsList?
+            var errorString = ""
         }
         struct ViewModel
         {
+            var stations: StationsList?
+            var errorString = ""
         }
     }
 }

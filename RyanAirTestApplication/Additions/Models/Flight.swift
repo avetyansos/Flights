@@ -18,10 +18,10 @@ struct Flight: Codable {
 struct Trip: Codable {
     var origin: String
     var destination: String
-    var dates: [Date]
+    var dates: [FlightDate]
 }
 
-struct Date: Codable {
+struct FlightDate: Codable {
     var dateOut: String
     var flights: [FlightTime]
     var regularFare: RegularFare

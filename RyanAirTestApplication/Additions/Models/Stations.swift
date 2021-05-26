@@ -13,7 +13,7 @@ struct StationsList: Codable {
 }
 
 struct Station: Codable {
-    var alias: String?
+    var alias: [String]
     var alternateName: String?
     var code: String
     var countryAlias: String?
@@ -32,4 +32,5 @@ struct Station: Codable {
 
 struct Market: Codable {
     var code: String
+    var aalborg: String?
 }
