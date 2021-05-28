@@ -38,17 +38,21 @@ class OPtionSelectionViewController: UIViewController {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        if let text = textField.text {
+        if let text = textField.text, text.count > 0 {
             self.visibleAirportsList = self.visibleAirportsList.filter{
                 ($0.countryAlias?.range(of: text, options: .caseInsensitive) != nil)
                     || ($0.countryCode.range(of: text, options: .caseInsensitive) != nil)
                     || ($0.countryName.range(of: text, options: .caseInsensitive) != nil)
+                    || ($0.name.range(of: text, options: .caseInsensitive) != nil)
                     || ($0.code.range(of: text, options: .caseInsensitive) != nil)
-            }
-            if self.visibleAirportsList.count == 0 || text.count == 0{
-                self.visibleAirportsList = self.airportsList!
+                    || ($0.countryName.range(of: text, options: .caseInsensitive) != nil)
             }
             self.tableView.reloadData()
+        } else {
+            if textField.text?.count == 0 {
+                self.visibleAirportsList = self.airportsList!
+                self.tableView.reloadData()
+            }
         }
     }
     

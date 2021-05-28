@@ -42,8 +42,10 @@ class SearchWorker
                               URLQueryItem(name: "adt", value: requestItems.adult),
                               URLQueryItem(name: "teen", value: requestItems.teen),
                               URLQueryItem(name: "chd", value: requestItems.child),
+                              URLQueryItem(name: "inf", value: "0"),
                               URLQueryItem(name: "roundtrip", value: "true"),
-                              URLQueryItem(name: "ToUs", value: "AGREED")]
+                              URLQueryItem(name: "ToUs", value: "AGREED"),
+                              URLQueryItem(name: "Disc", value: "0"),]
         
         APIClient().perform(request) { (response) in
             switch response {
@@ -56,5 +58,4 @@ class SearchWorker
             }
         }
     }
-    
 }

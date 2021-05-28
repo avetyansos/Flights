@@ -164,10 +164,16 @@ struct APIClient {
                     if httpResponse.statusCode == 401 {
                         completion(.failure(FailureResponse<Data?>(statusCode:httpResponse.statusCode, body : .generalErrorWithString(errorString : "Invalid Authentication"))))
                     } else if httpResponse.statusCode == 404 {
-                        if let uData = data, let errorInfo = try? JSONDecoder().decode(ErrorInfo.self, from: uData) {
-                            completion(.failure(FailureResponse<Data?>(statusCode: httpResponse.statusCode, body: .generalErrorWithString(errorString: errorInfo.message))))
+                        if let uData = data{
+                            do {
+                                let errorInfo = try JSONDecoder().decode(ErrorInfo.self, from: uData)
+                                completion(.failure(FailureResponse<Data?>(statusCode: httpResponse.statusCode, body: .generalErrorWithString(errorString: errorInfo.message))))
+                            } catch {
+                                completion(.failure(FailureResponse<Data?>(statusCode: httpResponse.statusCode, body: .errorWithString(date: data!))))
+                            }
+                            
                         } else {
-                            completion(.failure(FailureResponse<Data?>(statusCode: httpResponse.statusCode, body: .errorWithString(date: data!))))
+                            
                         }
                         
                     } else {

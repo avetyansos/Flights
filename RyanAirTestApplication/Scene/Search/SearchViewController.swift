@@ -82,7 +82,6 @@ class SearchViewController: UIViewController, SearchDisplayLogic
     }
     
     func setDatePickerToDateToField() {
-        let calerndar = NSCalendar(calendarIdentifier: .gregorian)
         let currentDate = Date()
         var comps = DateComponents()
         comps.year = 0

@@ -44,7 +44,12 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore
             response.flight = flight
             self.presenter?.presentFlights(response: response)
         }, { error in
-            response.errorString = error.localizedDescription
+            switch error {
+            case .generalErrorWithString(let errorString):
+                response.errorString = errorString
+            default:
+                response.errorString  = error.localizedDescription
+            }
             self.presenter?.presentError(response: response)
         })
     }
