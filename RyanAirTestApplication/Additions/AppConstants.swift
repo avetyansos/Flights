@@ -11,7 +11,7 @@ import Foundation
 struct AppConstants {
     static let baseURL = "https://tripstest.ryanair.com"
     static let searchFlightBaseURL = "https://sit-nativeapps.ryanair.com"
-    static let getFlightsTail = "api/v4/Availability"
+    static let getFlightsTail = "api/v4/en-gb/Availability"
     static let getAirportsListTail = "static/stations.json"
     
 }
