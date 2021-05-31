@@ -50,8 +50,13 @@ class SearchWorker
         APIClient().perform(request) { (response) in
             switch response {
             case .success(let responseValue):
-                guard let stations = try? responseValue.decode(to: Flight.self) else {failure(APIError.decodingFailure); return}
-                success(stations.body)
+                do {
+                    let stations = try responseValue.decode(to: Flight.self)
+                    success(stations.body)
+                } catch {
+                    print(error.localizedDescription)
+                    failure(APIError.generalErrorWithString(errorString: error.localizedDescription))
+                }
                 
             case .failure( let error):
                 failure(error.body)

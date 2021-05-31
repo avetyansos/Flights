@@ -194,7 +194,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic
     
     func showSearchResults(viewModel: Search.UseCase.ViewModel) {
         DispatchQueue.main.async {
-            self.router?.navigateToSearchResults(trips: viewModel.flight.trips)
+            self.router?.navigateToSearchResults(trips: viewModel.flight.trips ?? [Trip]())
         }
     }
 }

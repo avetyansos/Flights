@@ -13,6 +13,7 @@ class SearchResultViewController: UIViewController, SearchResultDisplayLogic
 {
     var interactor: SearchResultBusinessLogic?
     var router: (NSObjectProtocol & SearchResultRoutingLogic & SearchResultDataPassing)?
+    @IBOutlet weak var tableView: UITableView!
     var trips = [Trip]()
     // MARK: Object lifecycle
     
@@ -61,23 +62,34 @@ class SearchResultViewController: UIViewController, SearchResultDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        self.tableView.reloadData()
     }
     
 }
 
 extension SearchResultViewController: UITableViewDelegate {
     
+     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return trips[0].originName
+        } else {
+            return trips [1].originName
+        }
+    }
 }
 
 extension SearchResultViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trips.count
+        return trips[section].dates?.count ?? 0
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultsTableViewCell", for: indexPath) as! SearchResultsTableViewCell
-        cell.regularFare = trips[indexPath.row].dates
+        cell.regularFare = trips[indexPath.section].dates?[indexPath.row]
         
         return cell
     }

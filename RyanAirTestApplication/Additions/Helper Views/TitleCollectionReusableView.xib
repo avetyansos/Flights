@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="TitleCollectionReusableView" reuseIdentifier="header" id="U6b-Vx-4bR" customClass="TitleCollectionReusableView" customModule="RyanAirTestApplication" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bc8-cZ-MmE">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY1-x2-y7s">
+                            <rect key="frame" x="10" y="10" width="300" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="CY1-x2-y7s" firstAttribute="top" secondItem="bc8-cZ-MmE" secondAttribute="top" constant="10" id="Mhk-ZM-gtp"/>
+                        <constraint firstAttribute="trailing" secondItem="CY1-x2-y7s" secondAttribute="trailing" constant="10" id="We8-vm-1rO"/>
+                        <constraint firstItem="CY1-x2-y7s" firstAttribute="leading" secondItem="bc8-cZ-MmE" secondAttribute="leading" constant="10" id="YWy-hB-wkx"/>
+                        <constraint firstAttribute="bottom" secondItem="CY1-x2-y7s" secondAttribute="bottom" constant="10" id="xOU-Tu-mgO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="bc8-cZ-MmE" secondAttribute="trailing" id="38A-Cy-zpR"/>
+                <constraint firstItem="bc8-cZ-MmE" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="73c-Lr-c3R"/>
+                <constraint firstItem="bc8-cZ-MmE" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="EG6-L8-q1R"/>
+                <constraint firstAttribute="bottom" secondItem="bc8-cZ-MmE" secondAttribute="bottom" id="HNR-cp-j9I"/>
+            </constraints>
+            <connections>
+                <outlet property="titleLabel" destination="CY1-x2-y7s" id="oTr-1x-EGU"/>
+            </connections>
+            <point key="canvasLocation" x="125" y="100"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

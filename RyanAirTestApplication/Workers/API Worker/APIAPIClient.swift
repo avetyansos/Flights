@@ -148,6 +148,7 @@ struct APIClient {
         urlRequest.httpBody = request.body
         
         request.headers?.forEach { urlRequest.addValue($0.value, forHTTPHeaderField: $0.field) }
+        urlRequest.addValue("ios", forHTTPHeaderField: "client")
         self.makeUserInteractionInabled(false)
         let postTask = session.dataTask(with: urlRequest.debugLog()) { (data, response, error) in
             self.makeUserInteractionInabled(true)

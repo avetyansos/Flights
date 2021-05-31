@@ -10,23 +10,11 @@ import UIKit
 class SearchResultsTableViewCell: UITableViewCell {
     @IBOutlet weak var datelLabel: UILabel!
     @IBOutlet weak var flightNumberLabel: UILabel!
-    @IBOutlet weak var verticalStack: UIStackView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    var regularFare: [FlightDate]? {
+    var regularFare: FlightDate? {
         didSet {
-            let horizontalStackView: UIStackView = {
-                    let hsv = UIStackView()
-                    hsv.axis = .horizontal
-                    hsv.alignment = .fill
-                    hsv.distribution = .equalSpacing
-                    hsv.spacing = 10
-                    hsv.translatesAutoresizingMaskIntoConstraints = false
-
-                    return hsv
-                }()
-            let amountLabel = UILabel()
-            amountLabel.text = "Sos"
-            horizontalStackView.addSubview(amountLabel)
+            self.datelLabel.text = regularFare?.dateOut?.toVisibleDateFormat()
         }
     }
     override func awakeFromNib() {
@@ -40,4 +28,43 @@ class SearchResultsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+extension SearchResultsTableViewCell: UICollectionViewDelegate {
+    
+}
+
+extension SearchResultsTableViewCell : UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return regularFare?.flights?.count ?? 0
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return regularFare?.flights?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 40)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+             let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! TitleCollectionReusableView
+            sectionHeader.titleLabel.text = regularFare?.dateOut?.toVisibleTimeFormat()
+             return sectionHeader
+        } else {
+             return UICollectionReusableView()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RegularFareCollectionViewCell", for: indexPath) as! RegularFareCollectionViewCell
+        let flights = regularFare?.flights?[indexPath.row]
+        cell.flightNUmberLabel.text = flights?.flightNumber
+        cell.priceLabel.text = "\(flights?.regularFare?.fares?.first?.amount)"
+        return cell
+    }
+    
+    
 }
